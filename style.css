@@ -65,6 +65,18 @@ h2 {
     color: springgreen;
     transform: scale(1.1, 1.1);
 }
+.container .btn {
+    border: 1px solid;
+    outline: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .add {
     position: fixed;
