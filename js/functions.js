@@ -57,3 +57,20 @@ function setLike(el, id, like) {
         localStorage.setItem("band-cats", JSON.stringify(pets));
     })
 }
+function setDel(id, el) {
+    let card = el.parentElement.parentElement;
+    fetch(`https://cats.petiteweb.dev/api/single/${author}/delete/${id}`, {
+        method: "delete"
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data.message.includes("успешно")) {
+                cats = cats.filter(cat =>  cat.id !== id);
+                localStorage.setItem("leksas-cats", JSON.stringify(cats));
+                card.remove();
+            } else {
+                alert(data.message);
+            }
+        })
+}
